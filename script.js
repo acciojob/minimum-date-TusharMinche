@@ -1,5 +1,28 @@
 function minDate(dates) {
   //write you code here
+	let ans = dates[0];
+	for(let i = 1; i < dates.length; i++){
+		let year = parseInt(dates[i][0] + dates[i][1] + dates[i][2] + dates[i][3]);
+		let month = parseInt(dates[i][5] + dates[i][6]);
+		let day = parseInt(dates[i][8] + dates[i][9]);
+
+		let ansYear = parseInt(ans[0] + ans[1] + ans[2] + ans[3]);
+let ansMonth = parseInt(ans[5] + ans[6]);
+let ansDay = parseInt(ans[8] + ans[9]);
+
+
+		if(year < ansYear){
+			ans = dates[i];
+		}
+		else if(year == ansYear && month < ansMonth){
+			ans = dates[i];
+		}
+		else if(year == ansYear && month == ansMonth && day < ansDay){
+			ans = dates[i];
+		}
+	}
+
+	return ans;
 }
 
 // Do not change the code
